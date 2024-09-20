@@ -1,7 +1,11 @@
-module.exports = (error, req, res, next)=>{
+const errorHandler = (error, request, response, next) => {
     try {
-        return res.status(error.status || 500).json({error: error || `Internal Server Error`})
+      return response
+        .status(error.status || 500)
+        .json({ error: error || "Server Went down" });
     } catch (error) {
-        next(error)
+      next(error);
     }
-}
+  };
+  
+  module.exports = errorHandler;

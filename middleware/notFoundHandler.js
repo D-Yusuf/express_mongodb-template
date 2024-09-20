@@ -1,7 +1,12 @@
-module.exports = (req, res, next)=>{
+const notFoundHandler = (request, response, next) => {
     try {
-        return res.status(404).json({error: `${req.originalUrl} not found`})
+      return response
+        .status(404)
+        .json({ error: `${request.originalUrl} does not exist` });
     } catch (error) {
-        next(error)
+      console.log(error);
+      next(error);
     }
-}
+  };
+  
+  module.exports = notFoundHandler;
