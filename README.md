@@ -18,7 +18,7 @@ Example of MULTER usage:
 });
 </code>
 
-### When creating new post 
+### When creating new post (controller)
 <code>
 const postsCreate = async (req, res) => {
   try {
@@ -32,4 +32,12 @@ const postsCreate = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+</code>
+
+### When creating new post (router)
+<code>
+router.post('/', upload.single("image"), postsCreate);
+----------
+const photoCount = 23
+router.post('/', upload.array("photos", photoCount), postsCreate);
 </code>
