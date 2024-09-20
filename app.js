@@ -3,11 +3,13 @@ const path = require("path")
 const app = express();
 const connectDb = require('./database');
 const morgan = require('morgan');
+const cors = require("cors")
 const notFoundHandler = require('./middleware/notFoundHandler');
 const errorHandler = require('./middleware/errorHandler');
 require("dotenv").config()
 connectDb();
 app.use(express.json());
+app.use(cors())
 app.use(morgan("dev"))
 
 
