@@ -1,3 +1,4 @@
 node_modules
-.env
-./media
+# .env
+# media
+# remove comment from prev lines~
