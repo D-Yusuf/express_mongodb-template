@@ -7,10 +7,8 @@ npm i cors dotenv express mongoose morgan multer
 Example of MULTER usage:
 </h1>
 
-<code>
-
----------------
 ### Post Schema
+<code>
 
   const PostSchema = new Schema({
   username: {type: String, default: "Anonymous"},
@@ -18,9 +16,10 @@ Example of MULTER usage:
   body: {type: String, required: [true, "Post Content required!"]},
   image : {type: String} 
 });
------------
-### When creating new post 
+</code>
 
+### When creating new post 
+<code>
 const postsCreate = async (req, res) => {
   try {
     if(req.file){
