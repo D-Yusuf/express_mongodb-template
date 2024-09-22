@@ -13,10 +13,10 @@ app.use(cors())
 app.use(morgan("dev"))
 
 
-app.use('/api/<path>', "<routes>");
+app.use('/api/<path>', <router>";
 
 // use if u want to see images in browser-> localhost:PORT/media/...imgUrl
-// app.use("media", express.static(path.join(__dirname, "/media")))
+// app.use("/media", express.static(path.join(__dirname, "/media")))
 
 app.use(notFoundHandler)
 app.use(errorHandler)
